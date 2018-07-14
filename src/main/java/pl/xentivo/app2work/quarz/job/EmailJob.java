@@ -17,6 +17,6 @@ public class EmailJob implements Job {
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
 
-        cronService.sendSpam();
+        cronService.sendSpam("emai","service");
     }
 }

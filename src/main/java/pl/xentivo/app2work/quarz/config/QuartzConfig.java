@@ -22,8 +22,11 @@ import pl.xentivo.app2work.quarz.quartz.QuartzJobFactory;
 
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import java.util.Timer;
 
 /**
  * Created by gkatzioura on 6/7/16.
@@ -84,8 +87,10 @@ public class QuartzConfig {
 
     public static SimpleTriggerFactoryBean createTrigger(JobDetail jobDetail, long pollFrequencyMs) {
         SimpleTriggerFactoryBean factoryBean = new SimpleTriggerFactoryBean();
+        Date date=new Date();
+        date.setMinutes(date.getMinutes()+1);
         factoryBean.setJobDetail(jobDetail);
-        factoryBean.setStartDelay(0L);
+        factoryBean.setStartTime(date);
         factoryBean.setRepeatInterval(pollFrequencyMs);
         factoryBean.setRepeatCount(0);
         // in case of misfire, ignore all missed triggers and continue :

@@ -1,8 +1,6 @@
 package pl.xentivo.app2work.quarz.job;
 
-import org.quartz.Job;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
+import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +14,10 @@ public class BuJob implements Job {
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-      cronService.sendSpam();
+
+        JobDataMap detail=jobExecutionContext.getJobDetail().getJobDataMap();
+        String m1=detail.getString("W1");
+        String m2=detail.getString("W2");
+      cronService.sendSpam(m1,m2);
     }
 }
