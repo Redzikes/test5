@@ -1,7 +1,7 @@
 spring:
   datasource:
     continueOnError: true
-    url: jdbc:h2:file:~/testtt646d5
+    url: jdbc:h2:file:~/testtt646d5tsqsdd
     username: sa
     password:
   h2:
@@ -10,7 +10,7 @@ spring:
       enabled: true
   quartz:
     jdbc:
-      schema: classpath:/org/schema.sql
+      schema: classpath:schemad.sql
 org:
   quartz:
     scheduler:
