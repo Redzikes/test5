@@ -91,7 +91,7 @@ public class QuartzConfig {
         date.setMinutes(date.getMinutes()+1);
         factoryBean.setJobDetail(jobDetail);
         factoryBean.setStartTime(date);
-        factoryBean.setRepeatInterval(pollFrequencyMs);
+        factoryBean.setRepeatInterval(0);
         factoryBean.setRepeatCount(0);
         // in case of misfire, ignore all missed triggers and continue :
         factoryBean.setMisfireInstruction(SimpleTrigger.MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT);

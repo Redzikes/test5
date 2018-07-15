@@ -1,67 +1,16 @@
-spring:
-  datasource:
-    continueOnError: true
-    url: jdbc:postgresql://localhost:5432/aptekarze
-    username: postgres
-    password: aptekarze
-    driver-class-name: org.postgresql.Driver
-  quartz:
-    jdbc:
-      schema: classpath:schemapostres.sql
-  jpa:
-    hibernate:
-      ddl-auto: create
-org:
-  quartz:
-    scheduler:
-      instanceName: application
-      instanceId: AUTO
-    threadPool:
-      threadCount: 5
-    datasource:
-      default:
-        driver: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
-job:
-  startDelay: 0
-  repeatInterval: 6000
-  description: Sample job
-  key: StatisticsJobata
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #spring:
 #  datasource:
 #    continueOnError: true
-#    url: jdbc:h2:file:~/testtt646d5tsqsdd
-#    username: sa
-#    password:
-#  h2:
-#    console:
-#      path: /h2
-#      enabled: true
+#    url: jdbc:postgresql://localhost:5432/aptekarze
+#    username: postgres
+#    password: aptekarze
+#    driver-class-name: org.postgresql.Driver
 #  quartz:
 #    jdbc:
-#      schema: classpath:schemad.sql
+#      schema: classpath:schemapostres.sql
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
 #org:
 #  quartz:
 #    scheduler:
@@ -69,8 +18,59 @@ job:
 #      instanceId: AUTO
 #    threadPool:
 #      threadCount: 5
+#    datasource:
+#      default:
+#        driver: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
 #job:
 #  startDelay: 0
 #  repeatInterval: 6000
 #  description: Sample job
 #  key: StatisticsJobata
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spring:
+  datasource:
+    continueOnError: true
+    url: jdbc:h2:file:~/testtt646d5tsqsdds
+    username: sa
+    password:
+  h2:
+    console:
+      path: /h2
+      enabled: true
+  quartz:
+    jdbc:
+      schema: classpath:schemad.sql
+org:
+  quartz:
+    scheduler:
+      instanceName: application
+      instanceId: AUTO
+    threadPool:
+      threadCount: 5
+job:
+  startDelay: 0
+  repeatInterval: 0
+  description: Sample job
+  key: StatisticsJobata
